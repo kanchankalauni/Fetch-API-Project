@@ -13,9 +13,8 @@
 
 // With using Await
 
-let num1 = 5 
-let num2 = 6 
-async function api(){
+
+async function api(num1, num2){
     try {
         let response = await fetch(`https://apicodethread.cyclic.app/sum?a=${num1}&b=${num2}`)
         let result = await response.json()
@@ -24,4 +23,9 @@ async function api(){
         console.log(err)
     }
 }
-api()
+
+document.getElementById("btn").addEventListener('click', () => {
+    let num1 = document.getElementById("num1").value
+    let num2 = document.getElementById("num2").value
+    api(num1,num2)
+})
