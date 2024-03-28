@@ -16,9 +16,10 @@
 
 async function api(num1, num2){
     try {
-        let response = await fetch(`https://apicodethread.cyclic.app/sum?a=${num1}&b=${num2}`)
+        let response = await fetch(`https://apicodethread.cyclic.app/sub?a=${num1}&b=${num2}`)
         let result = await response.json()
-        console.log(result)
+        // console.log(result)
+        document.getElementById("total").innerHTML = result.sub
     } catch (err) {
         console.log(err)
     }
